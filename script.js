@@ -2,6 +2,8 @@
 const numberOfSquareInGrid = 700;
 let gridRows = [];
 const grid = document.getElementsByClassName("grid")[0];
+// const startButton = document.getElementsById("start");
+// const stopButton = document.getElementsById("stop");
 
 // console.log(grid);
 
@@ -114,7 +116,15 @@ function isEachSquareDeadOrAlive() {
 // on click, populate
 isEachSquareDeadOrAlive()
 
-window.setInterval(() => isEachSquareDeadOrAlive(),2000)
+let timer = setInterval(() => isEachSquareDeadOrAlive(),2000);
+
+function startTimer() {
+    timer = setInterval(() => isEachSquareDeadOrAlive(),2000);
+}
+
+function stopTimer() {
+    clearInterval(timer);
+}
 
 
 // make timer
