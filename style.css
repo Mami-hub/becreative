@@ -1,0 +1,35 @@
+main {
+    width: 100vw;
+    min-height:100vh;
+    background:papayawhip;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container {
+    background:white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding:16px;
+}
+
+.grid {
+    display:flex;
+    flex-direction: column;
+}
+
+.grid-row {
+    width:100%;
+    display: flex;
+}
+
+.grid-item {
+    width:8px;
+    height:8px;
+    border: 1px solid gray;
+    background:lightgray;
+} 
+
+.grid-item[data-alive=true] {
+    background:brown;
+}
