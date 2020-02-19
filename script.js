@@ -76,6 +76,8 @@ function isEachSquareDeadOrAlive() {
             }
 
             const neighbours = [neighbour1,neighbour2,neighbour3,neighbour4,neighbour5,neighbour6,neighbour7,neighbour8];
+
+            console.log(neighbours);
             // console.log("neighbours", neighbours)
         });
     });
