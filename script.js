@@ -67,8 +67,6 @@ function isEachSquareDeadOrAlive() {
             let neighbour6 = null;
             let neighbour7 = null;
             let neighbour8 = null;
-            // console.log(neighbour1,neighbour2,neighbour3,neighbour4,neighbour5,neighbour6,neighbour7,neighbour8)
-            // if (rowIndex === 0) console.log(gridRows[rowIndex - 1])
 
             if (gridRows[rowIndex - 1] !== undefined) {
                 if (gridRows[rowIndex - 1][squareIndex - 1] !== undefined) neighbour1 = gridRows[rowIndex - 1][squareIndex - 1];
@@ -100,7 +98,7 @@ function isEachSquareDeadOrAlive() {
             if (square === true) {
                 if (sumOfAliveNeighbours <= 1) newGrid[rowIndex][squareIndex] = false;
                 if (sumOfAliveNeighbours > 1 && sumOfAliveNeighbours < 4) newGrid[rowIndex][squareIndex] = true;
-                if (sumOfAliveNeighbours <= 4) newGrid[rowIndex][squareIndex] = false;
+                if (sumOfAliveNeighbours >= 4) newGrid[rowIndex][squareIndex] = false;
             } else {
                 if (sumOfAliveNeighbours === 3) newGrid[rowIndex][squareIndex] = true;
                 else newGrid[rowIndex][squareIndex] = false;
@@ -108,26 +106,15 @@ function isEachSquareDeadOrAlive() {
         });
     });
 
-    return newGrid;
+    renderGrid(newGrid);
 }
 
 
 // Add event listeners on each grid item
 // on click, populate
-
-// window.setInterval(() => {
-//     console.log("hello sexy");
-//     isEachSquareDeadOrAlive();
-
-//     renderGrid();
-// },2000)
 isEachSquareDeadOrAlive()
 
-window.setInterval(() => {
-    const newGrid = isEachSquareDeadOrAlive();
-
-    renderGrid(newGrid);
-},5000)
+window.setInterval(() => isEachSquareDeadOrAlive(),2000)
 
 
 // make timer
